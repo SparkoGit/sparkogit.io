@@ -79,17 +79,11 @@ document.getElementById("demo1").innerHTML = confirm;
 		}); 
 	</script> 
 	
-	<script type="text/javascript">
-var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var dateTime = date+' '+time;
-		document.getElementById("demo").innerHTML = dateTime;
-	</script>
+	
 </head> 
 	
 <body> 
-	<h4 style="color:blue;">Last Update : <p align="right" style="color:green;" id="demo"></p></h4>
+	<h4 style="color:blue;text-align:right;">Last Update : <p style="color:green;" id="time"></p></h4>
 <div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-heading">
@@ -135,7 +129,18 @@ var dateTime = date+' '+time;
 			</div>
 	</center>
 		
-	
+	<script type="text/javascript">
+         var timeDisplay = document.getElementById("time");
+
+
+function refreshTime() {
+  var dateString = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
+  var formattedString = dateString.replace(", ", " - ");
+  timeDisplay.innerHTML = formattedString;
+}
+
+setInterval(refreshTime, 1000);
+	</script>
 		
 </body> 
 	<script language="JavaScript">
