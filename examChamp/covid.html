@@ -155,7 +155,7 @@ document.getElementById("demo1").innerHTML = confirm;
 	$("#deoc").click(function(event){ 
 				$.getJSON('https://api.covid19india.org/data.json', function(empo) { 
 				let decease = empo['statewise'];
-				    let val1 = $("input:text").val();
+				    var val1 = $("input:text").val();
 				
 				console.log(val1);
 					// Statewise Detail Count Total
@@ -254,10 +254,10 @@ document.getElementById("demo1").innerHTML = confirm;
 			<button type="button" class="btn btn-success" id="deoc"></button>
 		
 		
-				<th><h6><p style="color:blue;" id="stateactive"><b></b></p></h6></th>
-				<th><h6><p style="color:#ebc634;" id="stateconfirmed"><b></b></p></h6></th>
-				<th><h6><p style="color:green;" id="staterecovered"><b></b></p></h6></th>
-				<th><h6><p style="color:red;" id="statedeceased"><b></b></p></h6></th>
+				<th><h6><p style="color:blue;" id="stateactive"></p></h6></th>
+				<th><h6><p style="color:#ebc634;" id="stateconfirmed"></p></h6></th>
+				<th><h6><p style="color:green;" id="staterecovered"></p></h6></th>
+				<th><h6><p style="color:red;" id="statedeceased"></p></h6></th>
 			
 
 		
