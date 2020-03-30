@@ -150,14 +150,14 @@ document.getElementById("demo1").innerHTML = confirm;
 	<script type = "text/javascript" language="javascript"> 
 		$(document).ready(function() { 
 			
-			$("#dem").hide();
+			
 			
 			$("#get").click(function(event){ 
 				$.getJSON('https://api.covid19india.org/data.json', function(totalCas) { 
 					let val = $("input:text").val();
 					let deceased = totalCas['statewise'];
 					
-					$("#dem").show();
+					
 					
 					
 					// Statewise Detail Count Total
@@ -172,12 +172,12 @@ document.getElementById("demo1").innerHTML = confirm;
 					}
 					
 					
-					document.getElementById("stateactive").innerHTML = stateActive;
-					document.getElementById("stateaffected").innerHTML = stateConfirmed;
-					document.getElementById("staterecovered").innerHTML = stateRecovered;
-					document.getElementById("statedeceased").innerHTML = stateDeath;
+					document.getElementById("stateactive").innerHTML = "Active Case: " + stateActive;
+					document.getElementById("stateaffected").innerHTML = "Confirmed Case: " + stateConfirmed;
+					document.getElementById("staterecovered").innerHTML = "Recovered Case: " + stateRecovered;
+					document.getElementById("statedeceased").innerHTML = "Death Case: " + stateDeath;
 					
-					document.getElementById("statename").innerHTML = val;
+					document.getElementById("statename").innerHTML = val + " CASE | COVID19 LIVE STATE";
 				});
 				
 				});
@@ -248,23 +248,13 @@ document.getElementById("demo1").innerHTML = confirm;
 		
 		<center>
 		<h4 class="text-center" id="statename"></h4>	
-		<h4 class="text-center"> CASE | COVID19 LIVE</h4>
-		<table>
-			<thead>
-				<th><h6><p style="color:blue;"><b>Active Case</b></p></h6></th>
-				<th><h6><p style="color:#ebc634;"><b>Confirmed Case</b></p></h6></th>
-				<th><h6><p style="color:green;"><b>Recovered Case</b></p></h6></th>
-				<th><h6><p style="color:red;"><b>Death Case</b></p></h6></th>
-			</thead>
-			<tbody>
-				<tr>
-					<td><b><button type="button" class="btn btn-primary" id="stateactive"></button></b></td>
-					<td><b><button type="button" class="btn btn-warning" id="stateaffected"></button></b></td>
-					<td><b><button type="button" class="btn btn-success" id="staterecovered"></button></b</td>
-					<td><b><button type="button" class="btn btn-danger" id="statedeceased"></button></b></td>
-				</tr>
-			</tbody>
-		</table>
+		
+		
+				<th><h6><p style="color:blue;" id="stateactive"><b></b></p></h6></th>
+				<th><h6><p style="color:#ebc634;" id="stateconfirmed"><b></b></p></h6></th>
+				<th><h6><p style="color:green;" id="staterecovered"><b></b></p></h6></th>
+				<th><h6><p style="color:red;" id="statedeceased"><b></b></p></h6></th>
+			
 
 		
 </center>
