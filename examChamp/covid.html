@@ -162,7 +162,7 @@ document.getElementById("deoc").innerHTML = "GET" +val+"'s TOTAL DATA";
 					// Statewise Detail Count Total
 					for(i=1;i<decease.length;i++){
 						if(decease[i]['state']==val1){
-						    console.log(decease[i]['state']);
+						   // console.log(decease[i]['state']);
 							var stateActive = decease[i]['active'];
 							var stateConfirmed = decease[i]['confirmed'];
 							var stateRecovered = decease[i]['recovered'];
@@ -256,7 +256,7 @@ document.getElementById("deoc").innerHTML = "GET" +val+"'s TOTAL DATA";
 		
 		
 				<th><h6><p style="color:blue;" id="stateactive"></p></h6></th>
-				<th><h6><p style="color:#ebc634;" id="stateconfirmed"></p></h6></th>
+				<th><h6><p style="color:#ebc634;" id="stateaffected"></p></h6></th>
 				<th><h6><p style="color:green;" id="staterecovered"></p></h6></th>
 				<th><h6><p style="color:red;" id="statedeceased"></p></h6></th>
 			
