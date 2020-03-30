@@ -13,6 +13,22 @@
 "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
 	</script> 
 	
+	<style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
+	
 	<!-- Script to get JSON file and display its content --> 
 	<script type = "text/javascript" language="javascript"> 
 		$(document).ready(function() { 
@@ -26,7 +42,7 @@
 					let confirm="";
 					$.each(a, function (key, data) {
     //console.log(key);
-	confirm += "" + key + " ==> Confirmed Case -> " + data.confirmed + "  ->->->    Unconfirmed Case -> ";
+	confirm += "" + key + " ==> Confirmed Case -> " + data.confirmed + "  ==>    Unconfirmed Case -> ";
 	
 	
 		
@@ -102,6 +118,11 @@ document.getElementById("demo1").innerHTML = confirm;
 	
 	
 	</table> 
+		
+		<br/><br/><br/>
+		<div class="modal-subtitle">
+				<h2 class="text-center">This Page is Designed & Developed By Debkanta Mondal<br/>**Real Time Data Source : Official Site of COVID19</h2>
+			</div>
 	</center>
 		
 	
