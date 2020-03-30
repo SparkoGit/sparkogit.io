@@ -82,12 +82,40 @@ document.getElementById("demo1").innerHTML = confirm;
 			
 		}); 
 	</script> 
-	
+	<script type = "text/javascript" language="javascript"> 
+		$(document).ready(function() { 
+			
+			// $("#get").click(function(event){ 
+				$.getJSON('https://api.covid19india.org/data.json', function(totalCase) { 
+					let deceased = totalCase['cases_time_series'];
+					var deceasedCount=0;
+					var affectedCount=0;
+					var recoveredCount=0;
+					//console.log(deceased.length);
+					for(i=0;i<deceased.length;i++){
+						deceasedCount += parseInt(deceased[i]['dailydeceased']);
+						affectedCount += parseInt(deceased[i]['dailyconfirmed']);
+						recoveredCount += parseInt(deceased[i]['dailyrecovered']);
+						//console.log(deceasedCount);
+					}
+					console.log(deceasedCount);
+					console.log(affectedCount);
+					console.log(recoveredCount);
+					document.getElementById("affected").innerHTML = affectedCount;
+					document.getElementById("recovered").innerHTML = recoveredCount;
+					document.getElementById("deceased").innerHTML = deceasedCount;
+				});
+				
+				});
+	</script>
 	
 </head> 
 	
 <body> 
 	<h6 style="color:blue;text-align:right;">Last Update :&nbsp; <p style="color:green;" id="time"></p></h6>
+	<br/>
+<button type="button" class="btn btn-primary" id="affected"></button>&nbsp;<button type="button" class="btn btn-success" id="recovered"></button>&nbsp;<button type="button" class="btn btn-danger" id="deceased"></button>
+<br/>
 <div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-heading">
