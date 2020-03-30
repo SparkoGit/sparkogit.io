@@ -47,11 +47,34 @@ document.getElementById("demo1").innerHTML = confirm;
 </head> 
 	
 <body> 
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Enter State Name , Eg.: Maharashtra" aria-label="state" aria-describedby="basic-addon1" id="state">
-</div>
-<br/><br/>
-<button type="button" class="btn btn-success" id="get">GET</button>
+<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-heading">
+				<h2 class="text-center">COVID19 LIVE CASE DATA</h2>
+			</div>
+			<hr />
+			<div class="modal-body">
+				<form action="" role="form">
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+							<span class="glyphicon glyphicon-user"></span>
+							</span>
+							<input type="text" id="state" class="form-control" placeholder="Enter State , Eg: Maharashtra" />
+						</div>
+					</div>
+					
+
+					<div class="form-group text-center">
+						<button type="button" id="get" class="btn btn-success btn-lg">GET</button>
+						<!--<a href="#" class="btn btn-link">forget Password</a>-->
+					</div>
+
+				</form>
+			<!--	<p>@Vibes</p>-->
+			</div>
+		</div>
+	</div>
 	
 		
 	<table id = "dem">
