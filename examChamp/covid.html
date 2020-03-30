@@ -121,6 +121,7 @@ document.getElementById("demo1").innerHTML = confirm;
 			
 			// $("#get").click(function(event){ 
 				$.getJSON('https://api.covid19india.org/data.json', function(totalCase) { 
+					let val = $("input:text").val();
 					let deceased = totalCase['statewise'];
 					
 					//console.log(deceased.length);
@@ -128,6 +129,17 @@ document.getElementById("demo1").innerHTML = confirm;
 					let affectedCount = deceased[0]['confirmed'];
 					let recoveredCount = deceased[0]['recovered'];
 					let deceasedCount = deceased[0]['deaths'];
+					
+					// Statewise Detail Count Total
+					for(i=0;i<deceased.length;i++){
+						if(deceased[i]['state']==val){
+							var stateActive = deceased[i]['active'];
+							var stateConfirmed = deceased[0]['confirmed'];
+							var stateRecovered = deceased[0]['recovered'];
+							var stateDeath = deceased[0]['deaths'];
+							break;
+						}
+					}
 					
 					console.log(activeCount);
 					console.log(deceasedCount);
@@ -137,6 +149,13 @@ document.getElementById("demo1").innerHTML = confirm;
 					document.getElementById("affected").innerHTML = affectedCount;
 					document.getElementById("recovered").innerHTML = recoveredCount;
 					document.getElementById("deceased").innerHTML = deceasedCount;
+					
+					document.getElementById("stateactive").innerHTML = stateActive;
+					document.getElementById("stateaffected").innerHTML = stateConfirmed;
+					document.getElementById("staterecovered").innerHTML = stateRecovered;
+					document.getElementById("statedeceased").innerHTML = stateDeath;
+					
+					document.getElementById("statename").innerHTML = val;
 				});
 				
 				});
@@ -204,6 +223,30 @@ document.getElementById("demo1").innerHTML = confirm;
 	
 	<center>
 	<table id = "dem">
+		
+		<center>
+		<h4 class="text-center" id="statename"></h4>	
+		<h4 class="text-center"> CASE | COVID19 LIVE</h4>
+		<table>
+			<thead>
+				<th><h6><p style="color:blue;"><b>Active Case</b></p></h6></th>
+				<th><h6><p style="color:#ebc634;"><b>Confirmed Case</b></p></h6></th>
+				<th><h6><p style="color:green;"><b>Recovered Case</b></p></h6></th>
+				<th><h6><p style="color:red;"><b>Death Case</b></p></h6></th>
+			</thead>
+			<tbody>
+				<tr>
+					<td><b><button type="button" class="btn btn-primary" id="stateactive"></button></b></td>
+					<td><b><button type="button" class="btn btn-warning" id="stateaffected"></button></b></td>
+					<td><b><button type="button" class="btn btn-success" id="staterecovered"></button></b</td>
+					<td><b><button type="button" class="btn btn-danger" id="statedeceased"></button></b></td>
+				</tr>
+			</tbody>
+		</table>
+
+		
+</center>
+		<br/>
 	
 	
 	<th id="demo1"></th>
