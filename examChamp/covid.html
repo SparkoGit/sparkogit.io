@@ -25,13 +25,31 @@
 					let dist="";
 					let confirm="";
 					$.each(a, function (key, data) {
-    console.log(key);
-	confirm += "" + key + " : ";
+    //console.log(key);
+	confirm += "" + key + " ==> Confirmed Case -> " + data.confirmed + "  ->->->    Unconfirmed Case -> ";
 	
-	$.each(data, function (index, data) {
-        console.log( data);
-		confirm +=   data +"<br/>" ;
-    });
+	
+		
+	   // confirm +=  data +" ";
+	   let arr = (Object.keys(data));
+		if(arr[2] == 'delta'){
+		     
+		    confirm+= data.delta.confirmed +" <br/><br/><hr/>";
+		
+	    }
+		//console.log(confirm);
+				
+			 
+		
+        
+		
+		
+    
+	
+	
+        //console.log( data);
+		//confirm += "UnConfirm Case: "  data. +"<br/>" ;
+    
     
 });
 
@@ -89,4 +107,44 @@ document.getElementById("demo1").innerHTML = confirm;
 	
 		
 </body> 
+	<script language="JavaScript">
+
+  window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+    function disabledEvent(e){
+      if (e.stopPropagation){
+        e.stopPropagation();
+      } else if (window.event){
+        window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+    }
+  };
+</script>
 </html> 
