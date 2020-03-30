@@ -121,7 +121,7 @@ document.getElementById("demo1").innerHTML = confirm;
 			
 			// $("#get").click(function(event){ 
 				$.getJSON('https://api.covid19india.org/data.json', function(totalCase) { 
-					let val = $("input:text").val();
+					//let val = $("input:text").val();
 					let deceased = totalCase['statewise'];
 					
 					//console.log(deceased.length);
@@ -129,6 +129,36 @@ document.getElementById("demo1").innerHTML = confirm;
 					let affectedCount = deceased[0]['confirmed'];
 					let recoveredCount = deceased[0]['recovered'];
 					let deceasedCount = deceased[0]['deaths'];
+					
+					
+					
+					console.log(activeCount);
+					console.log(deceasedCount);
+					console.log(affectedCount);
+					console.log(recoveredCount);
+					document.getElementById("active").innerHTML = activeCount;
+					document.getElementById("affected").innerHTML = affectedCount;
+					document.getElementById("recovered").innerHTML = recoveredCount;
+					document.getElementById("deceased").innerHTML = deceasedCount;
+					
+					
+				});
+				
+				});
+	</script>
+	
+	<script type = "text/javascript" language="javascript"> 
+		$(document).ready(function() { 
+			
+			$("#dem").hide();
+			
+			$("#get").click(function(event){ 
+				$.getJSON('https://api.covid19india.org/data.json', function(totalCas) { 
+					let val = $("input:text").val();
+					let deceased = totalCas['statewise'];
+					
+					$("#dem").show();
+					
 					
 					// Statewise Detail Count Total
 					for(i=0;i<deceased.length;i++){
@@ -141,14 +171,6 @@ document.getElementById("demo1").innerHTML = confirm;
 						}
 					}
 					
-					console.log(activeCount);
-					console.log(deceasedCount);
-					console.log(affectedCount);
-					console.log(recoveredCount);
-					document.getElementById("active").innerHTML = activeCount;
-					document.getElementById("affected").innerHTML = affectedCount;
-					document.getElementById("recovered").innerHTML = recoveredCount;
-					document.getElementById("deceased").innerHTML = deceasedCount;
 					
 					document.getElementById("stateactive").innerHTML = stateActive;
 					document.getElementById("stateaffected").innerHTML = stateConfirmed;
