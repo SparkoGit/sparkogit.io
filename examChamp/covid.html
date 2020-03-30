@@ -78,9 +78,18 @@ document.getElementById("demo1").innerHTML = confirm;
 			
 		}); 
 	</script> 
+	
+	<script type="text/javascript">
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
+		document.getElementById("demo").innerHTML = dateTime;
+	</script>
 </head> 
 	
 <body> 
+	<h4 style="color:blue;">Last Update : <p align="right" style="color:green;" id="demo"></p></h4>
 <div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-heading">
