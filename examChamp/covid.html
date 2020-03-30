@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title> 
+		jQuery getJSON() Method 
+	</title> 
+	
+	<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+	</script> 
+	
+	<!-- Script to get JSON file and display its content --> 
+	<script type = "text/javascript" language="javascript"> 
+		$(document).ready(function() { 
+			
+			 $("#get").click(function(event){ 
+				$.getJSON('https://api.covid19india.org/state_district_wise.json', function(emp) { 
+				    let val = $("input:text").val();
+					let a = (emp[val]['districtData']);
+					console.log(a);
+					let dist="";
+					let confirm="";
+					$.each(a, function (key, data) {
+    console.log(key);
+	confirm += "" + key + " : ";
+	
+	$.each(data, function (index, data) {
+        console.log( data);
+		confirm +=   data +"<br/>" ;
+    });
+    
+});
+
+document.getElementById("demo1").innerHTML = confirm;
+					
+					
+					
+				}); 
+				});
+			
+		}); 
+	</script> 
+</head> 
+	
+<body> 
+<input type="text" placeholder="Enter state Name" id="state">
+<br/><br/>
+<input type="button" value="Get" id="get">
+	
+		
+	<table id = "dem">
+	
+	
+	<th id="demo1"></th>
+	
+	
+	</table> 
+		
+	
+		
+</body> 
+</html> 
