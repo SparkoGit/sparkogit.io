@@ -116,9 +116,22 @@ document.getElementById("demo1").innerHTML = confirm;
 	<br/>
 	<center>
 		<h4 class="text-center">ALL INDIA CASE | COVID19 LIVE</h4>
- <h6><p style="color:blue;"><b>Confirmed Case</b></p></h6><b><button type="button" class="btn btn-primary" id="affected"></button></b><br/>
-		<h6><p style="color:green;"><b>Recovered Case</b></p></h6><b><button type="button" class="btn btn-success" id="recovered"></button></b><br/>
-		<h6><p style="color:red;"><b>Death Case</b></p></h6><b><button type="button" class="btn btn-danger" id="deceased"></button></b>
+		<table>
+			<thead>
+				<th><h6><p style="color:blue;"><b>Confirmed Case</b></p></h6></th>
+				<th><h6><p style="color:green;"><b>Recovered Case</b></p></h6></th>
+				<th><h6><p style="color:red;"><b>Death Case</b></p></h6></th>
+			</thead>
+			<tbody>
+				<tr>
+					<td><b><button type="button" class="btn btn-primary" id="affected"></button></b></td>
+					<td><b><button type="button" class="btn btn-success" id="recovered"></button></b</td>
+					<td><b><button type="button" class="btn btn-danger" id="deceased"></button></b></td>
+				</tr>
+			</tbody>
+		</table>
+
+		
 </center>
 		<br/>
 <div class="modal-dialog">
