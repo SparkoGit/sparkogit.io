@@ -200,7 +200,30 @@ document.getElementById("demo1").innerHTML = confirm;
 		}); 
 		});
 	</script> 
-	
+	<script type = "text/javascript" language="javascript"> 
+		$(document).ready(function() { 
+			
+			// $("#get").click(function(event){ 
+				$.getJSON('https://api.covid19india.org/data.json', function(update) { 
+					//let val = $("input:text").val();
+					let updateData = update['key_values'];
+					
+					//console.log(deceased.length);
+					let updateTime = updateData[0]['lastupdatedtime'];
+					
+					
+					
+					
+					console.log(updateTime);
+					
+					document.getElementById("time").innerHTML = updateTime;
+					
+					
+					
+				});
+				
+				});
+	</script>
 </head> 
 	
 <body> 
@@ -218,7 +241,8 @@ document.getElementById("demo1").innerHTML = confirm;
     </div>
   </div>
 </nav>
-	<h6 style="color:blue;text-align:right;">Last Update :&nbsp; <p style="color:green;" id="time"></p></h6>
+	<center><h6 style="color:blue;">Last Update :&nbsp; <p style="color:green;" id="time"></p></h6></center>
+	<!--<center><h6 style="color:blue;">Last Update :&nbsp; <p style="color:green;" id="time"></p></h6></center>-->
 	<br/>
 	<center>
 		<h4 class="text-center">ALL INDIA CASE | COVID19 LIVE</h4>
@@ -315,7 +339,7 @@ document.getElementById("demo1").innerHTML = confirm;
 			</div>
 	</center>
 		
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
          var timeDisplay = document.getElementById("time");
 
 
@@ -326,7 +350,7 @@ function refreshTime() {
 }
 
 setInterval(refreshTime, 1000);
-	</script>
+	</script>-->
 	
 	<!--AutoComplete-->
 	<script>
