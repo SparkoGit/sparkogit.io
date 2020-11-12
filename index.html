@@ -112,7 +112,7 @@
   <!--FB Chatbot-->
   
   <!-- Load Facebook SDK for JavaScript For COVID19-->
-      <div id="fb-root"></div>
+      <!--<div id="fb-root"></div>
       <script>
         window.fbAsyncInit = function() {
           FB.init({
@@ -133,7 +133,14 @@
       <div class="fb-customerchat"
         attribution=setup_tool
         page_id="105127317805910">
-      </div>
+      </div>-->
+      <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="AppsWebSolutionBot"
+  agent-id="d78dc557-34f8-4516-8233-b8089bc3dfb7"
+  language-code="en"
+></df-messenger>
   <!--Close Chatbot COVID19-->
   
   <!-- Load Facebook SDK for JavaScript -->
