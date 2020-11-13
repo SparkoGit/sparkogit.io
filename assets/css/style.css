@@ -11,8 +11,6 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444;
-  display: flex;
-  justify-direction: column;
 }
 
 a {
